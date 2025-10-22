@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo">Port<span>folio</span></div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Tombol Translate -->
+        <div class="language-switcher">
+            <div class="language-tooltip" id="language-tooltip">Translate to English</div>
+            <button class="translate-btn" id="translate-btn">
+                <i class="fas fa-language"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+     <div class="bubbles">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+    </div>
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2 data-i18n="home.greeting">Hai, Saya <span class="hero-name">Muhamad Sebastian Nugraha</span></h2>
+                <p data-i18n="home.description">Seorang Data Analyst yang passionate dalam membuat dan mengembangkan dashboard yang menarik dan fungsional.</p>
+                <p class="slogan" data-i18n="home.slogan">"Mengubah data mentah menjadi sebuah insight, dan insight menjadi solusi bisnis"</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn" data-i18n="home.viewProjects">Lihat Projek Saya</a>
+                    <a href="#contact" class="btn" data-i18n="home.contactMe">Hubungi Saya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 data-i18n="about.title">Tentang Saya</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-i18n="about.p1">Halo! Saya seorang Data Analyst dengan pengalaman kurang dari 1 tahun dalam mengembangkan dashboard. Saya memiliki keahlian dalam Python, SQL, dan berbagai tools visualisasi data seperti Looker Studio dan Spreadsheet atau Excel.</p>
+                    <p data-i18n="about.p2">Saya lulusan Sarjana Informatika dari Universitas Gunadarma, saya aktif dalam organisasi untuk mengasah kemampuan pemecahan masalah dan kerja tim saya.</p>
+                    <p data-i18n="about.p3">Selain Data Analyst, saya memiliki hobi Futsal. Saya percaya bahwa kehidupan yang seimbang antara kerja dan hobi dapat meningkatkan kreativitas dan produktivitas.</p>
+                    <a href="#resume" class="btn" data-i18n="about.viewResume">Lihat Resume Saya</a>
+                </div>
+                <div class="about-image">
+                    <img src="foto/saya.jpg" alt="Foto Profil">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <div class="container">
+            <h2 data-i18n="resume.title">Resume Saya</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date" data-i18n="timeline.job1.time">Januari 2023 - Sekarang</div>
+                        <h3 data-i18n="resume.job1.title">Asisten Perpustakaan</h3>
+                        <p data-i18n="resume.job1.company">Universitas Gunadarma</p>
+                        <p data-i18n="resume.job1.description">Aktif dalam organisasi menjadi Asisten Perpustakaan yang melayani keluhan mahasiswa, mengoperasi database perpustakaan, dan memvalidasi ribuan penulisan ilmiah dan skripsi mahasiswa.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date" data-i18n="timeline.job2.time">Februari 2024 - Juni 2024</div>
+                        <h3 data-i18n="resume.job2.title">MSIB Studi Independen Data Analyst</h3>
+                        <p data-i18n="resume.job2.company">MyEduSolve</p>
+                        <p data-i18n="resume.job2.description">Mengembangkan sales dashboard, order dashboard, dan operation dashboard yang menarik dan fungsional milik client partner Fisiohome untuk menciptakan dashboard yang lebih seamless.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 data-i18n="projects.title">Proyek Saya</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="foto/dampak_rokok.png" alt="Project 1">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title" data-i18n="projects.project1.title">Analisis Dampak Kebiasaan Merokok</h3>
+                        <p class="project-desc" data-i18n="projects.project1.description">Analisis dampak merokok terhadap faktor kesehatan menggunakan metode CRISP-DM dengan dataset comprehensive.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Google Colaboratory</span>
+                            <span class="project-tag">Spreadsheet</span>
+                            <span class="project-tag">Python</span>
+                        </div>
+                        <a href="#" data-project="project1" class="project-link" data-i18n="projects.viewPresentation">Lihat Presentasi <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="foto/pintu.jpg" alt="Project 2">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title" data-i18n="projects.project2.title">Analisis Sentimen Aplikasi PINTU Crypto</h3>
+                        <p class="project-desc" data-i18n="projects.project2.description">Analisis sentimen pada ulasan aplikasi PINTU Crypto untuk memahami opini dan wawasan pengguna.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Google Colaboratory</span>
+                            <span class="project-tag">Support Vector Machine</span>
+                            <span class="project-tag">CRISP-DM</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Textblob</span>
+                        </div>
+                        <a href="#" data-project="project2" class="project-link" data-i18n="projects.viewPresentation">Lihat Presentasi <i class="fas fa-arrow-right"></i></a>
+                        <div>
+                            <a href="https://github.com/MuhamadSebastian/Analisis_Sentimen_PINTU_Crytpo" class="project-link" data-i18n="projects.viewDetails">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="foto/hasil.jpg" alt="Project 3">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title" data-i18n="projects.project3.title">Klasifikasi Gambar</h3>
+                        <p class="project-desc" data-i18n="projects.project3.description">Model Machine Learning untuk klasifikasi gambar senjata tradisional yaitu Kujang, Bedog, Bambu Runcing, dan Tombak.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Convolusional Neural Network</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Tensorflow</span>
+                            <span class="project-tag">MobileNetV2</span>
+                        </div>
+                        <a href="https://github.com/MuhamadSebastian/Image_Classification_Tradisional_Weapon" class="project-link" data-i18n="projects.viewDetails">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Modal PPT Viewer - SIMPLIFIED -->
+                <div id="project-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        
+                        <!-- HANYA JUDUL -->
+                        <div class="modal-header">
+                            <h3 id="modal-title">Project Presentations</h3>
+                        </div>
+                        
+                        <!-- HANYA PDF VIEWER -->
+                        <div class="modal-body">
+                            <iframe id="project-viewer" width="100%" height="105%" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80" alt="Project 1">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">E-commerce Website</h3>
+                        <p class="project-desc">Website e-commerce lengkap dengan fitur keranjang belanja, pembayaran, dan manajemen produk.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                        <a href="#" class="project-link">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-intro">
+                <h2 data-i18n="contact.title">Mari Terhubung!</h2>
+                <p data-i18n="contact.description">Jangan ragu untuk menghubungi saya dan mendiskusikan kemungkinan kerja sama melalui situs portofolio pribadi saya.</p>
+            </div>
+            
+            <div class="social-media-container">
+                <div class="social-row">
+                    <div class="social-card">
+                        <div class="social-icon linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="social-info">
+                            <div class="social-platform">LinkedIn</div>
+                            <a href="https://www.linkedin.com/in/muhamadsebastian/" class="social-username">muhamadsebastian</a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-card">
+                        <div class="social-icon github">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="social-info">
+                            <div class="social-platform">GitHub</div>
+                            <a href="https://github.com/MuhamadSebastian" class="social-username">Muhamad Sebastian Nugraha</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-row">
+                    <div class="social-card">
+                        <div class="social-icon instagram">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="social-info">
+                            <div class="social-platform">Instagram</div>
+                            <a href="https://www.instagram.com/mhmd_sebastian13?igsh=MWJxdGI1ZnpyMmN1Ng==" class="social-username">@mhmd_sebastian13</a>
+                        </div>
+                    </div>
+                    
+                    <div class="social-card">
+                        <div class="social-icon email">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="social-info">
+                            <div class="social-platform">Email</div>
+                            <a href="mailto:muhamadsebastian.work@gmail.com" class="social-username">muhamadsebastian.work@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Port<span>folio</span></div>
+            <p class="copyright">Copyright © 2025 Muhamad Sebastian Nugraha. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+        
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('active');
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Form submission
+        //const contactForm = document.querySelector('form');
+        //if (contactForm) {
+        //    contactForm.addEventListener('submit', function(e) {
+        //        e.preventDefault();
+        //        alert('Terima kasih! Pesan Anda telah dikirim.');
+        //        contactForm.reset();
+        //    });
+        //}
+
+        // Data terjemahan
+        const translations = {
+            id: {
+                "home.greeting": "Hai, Saya <span class='hero-name'>Muhamad Sebastian Nugraha</span>",
+                "home.description": "Seorang Data Analyst yang passionate dalam membuat dan mengembangkan dashboard yang menarik dan fungsional.",
+                "home.slogan": "\"Mengubah data mentah menjadi sebuah insight, dan insight menjadi solusi bisnis\"",
+                "home.viewProjects": "Lihat Projek Saya",
+                "home.contactMe": "Hubungi Saya",
+                "about.title": "Tentang Saya",
+                "about.p1": "Halo! Saya seorang Data Analyst dengan pengalaman kurang dari 1 tahun dalam mengembangkan dashboard. Saya memiliki keahlian dalam Python, SQL, dan berbagai tools visualisasi data seperti Looker Studio dan Spreadsheet atau Excel.",
+                "about.p2": "Saya lulusan Sarjana Informatika dari Universitas Gunadarma, saya aktif dalam organisasi untuk mengasah kemampuan pemecahan masalah dan kerja tim saya.",
+                "about.p3": "Selain Data Analyst, saya memiliki hobi Futsal. Saya percaya bahwa kehidupan yang seimbang antara kerja dan hobi dapat meningkatkan kreativitas dan produktivitas.",
+                "about.viewResume": "Lihat Resume Saya",
+                "resume.title": "Resume Saya",
+                "timeline.job1.time": "Januari 2023 - Sekarang",
+                "resume.job1.title": "Asisten Perpustakaan",
+                "resume.job1.company": "Universitas Gunadarma",
+                "resume.job1.description": "Aktif dalam organisasi menjadi Asisten Perpustakaan yang melayani keluhan mahasiswa, mengoperasi database perpustakaan, dan memvalidasi ribuan penulisan ilmiah dan skripsi mahasiswa.",
+                "timeline.job2.time": "Februari 2024 - Juni 2024",
+                "resume.job2.title": "MSIB Studi Independen Data Analyst",
+                "resume.job2.company": "MyEduSolve",
+                "resume.job2.description": "Mengembangkan sales dashboard, order dashboard, dan operation dashboard yang menarik dan fungsional milik client partner Fisiohome untuk menciptakan dashboard yang lebih seamless.",
+                "resume.education.title": "Bachelor of Informatics Engineering",
+                "resume.education.institution": "Example University",
+                "resume.education.description": "Graduated cum laude. Active in the Informatics Student Association and various national coding competitions.",
+                "projects.title": "Portfolio Saya",
+                "projects.project1.title": "Analisis Dampak Kebiasaan Merokok",
+                "projects.project1.description": "Analisis dampak merokok terhadap faktor kesehatan menggunakan metode CRISP-DM dengan dataset comprehensive.",
+                "projects.project3.title": "Klasifikasi Gambar",
+                "projects.project3.description": "Model Machine Learning untuk klasifikasi gambar senjata tradisional yaitu Kujang, Bedog, Bambu Runcing, dan Tombak.",
+                "projects.project2.title": "Analisis Sentimen Aplikasi PINTU Crypto",
+                "projects.project2.description": "Analisis sentimen pada ulasan aplikasi PINTU Crypto untuk memahami opini dan wawasan pengguna.",
+                "projects.viewDetails": "Lihat Detail <i class='fas fa-arrow-right'></i>",
+                "projects.viewPresentation": "Lihat Presentasi <i class='fas fa-arrow-right'></i>",
+                "contact.title": "Mari Terhubung!",
+                "contact.description": "Jangan ragu untuk menghubungi saya dan mendiskusikan kemungkinan kerja sama melalui situs portofolio pribadi saya."
+
+            },
+            en: {
+                "home.greeting": "Hi, I'm <span class='hero-name'>Muhamad Sebastian Nugraha</span>",
+                "home.description": "A Data Analyst who is passionate about creating and developing engaging and functional dashboards.",
+                "home.slogan": "\"Transforming raw data into insights, and insights into business solutions\"",
+                "home.viewProjects": "View My Projects",
+                "home.contactMe": "Contact Me",
+                "about.title": "About Me",
+                "about.p1": "Hello! I am a Data Analyst with less than one year of experience in developing dashboards. I have skills in Python, SQL, and various data visualization tools such as Looker Studio and Spreadsheets or Excel",
+                "about.p2": "I graduated with a Bachelor's degree in Informatics from Gunadarma University, and I have been actively involved in organizations to sharpen my problem-solving and teamwork skills.",
+                "about.p3": "Besides being a Data Analyst, I enjoy playing futsal. I believe that maintaining a balance between work and hobbies can enhance creativity and productivity.",
+                "about.viewResume": "View My Resume",
+                "resume.title": "My Resume",
+                "timeline.job1.time": "January 2023 - Now",
+                "resume.job1.title": "Library Assistant",
+                "resume.job1.company": "Gunadarma University",
+                "resume.job1.description": "Actively involved in an organization as a Library Assistant, handling student inquiries, operating the library database, and validating thousands of academic papers and student theses.",
+                "timeline.job2.time": "February 2024 - June 2024",
+                "resume.job2.title": "MSIB Studi Independen Data Analyst",
+                "resume.job2.company": "MyEduSolve",
+                "resume.job2.description": "Developed engaging and functional sales, order, and operation dashboards for the client partner Fisiohome to create a more seamless dashboard experience.",
+                "resume.education.title": "Bachelor of Informatics Engineering",
+                "resume.education.institution": "Example University",
+                "resume.education.description": "Graduated cum laude. Active in the Informatics Student Association and various national coding competitions.",
+                "projects.title": "My Portfolio",
+                "projects.project1.title": "Analysis of the Impact of Smoking Habits",
+                "projects.project1.description": "Analysis of the impact of smoking on health factors using the CRISP-DM method with a comprehensive dataset.",
+                "projects.project3.title": "Image Classification",
+                "projects.project3.description": "Machine Learning model for image classification of traditional weapons, namely Kujang, Bedog, Bambu Runcing, and Tombak.",
+                "projects.project2.title": "Sentiment Analysis of the PINTU Crypto App",
+                "projects.project2.description": "Sentiment analysis on PINTU Crypto application reviews to understand user opinions and insights.",
+                "projects.viewDetails": "View Details <i class='fas fa-arrow-right'></i>",
+                "projects.viewPresentation": "View Presentation <i class='fas fa-arrow-right'></i>",
+                "contact.title": "Let's Connect!",
+                "contact.description": "Feel free to reach out and discuss potential collaborations through my personal portfolio website."
+                            
+            }
+        };
+
+        // Fungsi untuk mengganti bahasa
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Update tooltip text
+            const tooltip = document.getElementById('language-tooltip');
+            if (lang === 'en') {
+                tooltip.textContent = 'Translate to Indonesian';
+                localStorage.setItem('language', 'en');
+            } else {
+                tooltip.textContent = 'Translate to English';
+                localStorage.setItem('language', 'id');
+            }
+        }
+
+        // Event listener untuk tombol translate
+        document.getElementById('translate-btn').addEventListener('click', function() {
+            const currentLang = localStorage.getItem('language') || 'id';
+            const newLang = currentLang === 'id' ? 'en' : 'id';
+            changeLanguage(newLang);
+        });
+
+        // Cek bahasa yang disimpan sebelumnya
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('language');
+            if (savedLang === 'en') {
+                changeLanguage('en');
+            }
+        });
+
+        // Data project presentations
+        const projectsData = {
+            project1: {
+                pdf: "pdf/Mini_Project_Crisp_DM_Group_4.pdf",
+                title: "Analisis Data Dampak Kebiasaan Merokok terhadap Faktor Kesehatan dengan Metode CRISP-DM",
+            },
+            project2: {
+                pdf: "pdf/Pintu.pdf", 
+                title: "Analisis Sentimen Aplikasi PINTU",
+            }
+        };
+
+        // Update project cards dengan data attribute
+        document.querySelectorAll('.project-card').forEach((card, index) => {
+            const projectId = `project${index + 1}`;
+            const viewDetailsLink = card.querySelector('.project-link');
+            viewDetailsLink.setAttribute('data-project', projectId);
+        });
+
+        // Event listener untuk View Details
+        document.querySelectorAll('.project-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Jika ini link internal (data-project) dan bukan external link
+                if (this.hasAttribute('data-project') && this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    const projectId = this.getAttribute('data-project');
+                    openProjectModal(projectId);
+                }
+                // Untuk external link (GitHub) - biarkan default behavior
+            });
+        });
+
+        function openProjectModal(projectId) {
+            const project = projectsData[projectId];
+            
+            if (project) {
+                document.getElementById('modal-title').textContent = project.title;
+                document.getElementById('project-viewer').src = project.pdf;
+                document.getElementById('project-modal').style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Close modal functionality
+        document.querySelector('.close').addEventListener('click', closeModal);
+
+        // Close modal ketika klik outside content
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('project-modal');
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close modal dengan ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        function closeModal() {
+            document.getElementById('project-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Reset iframe source untuk hemat memory
+            setTimeout(() => {
+                document.getElementById('project-viewer').src = '';
+            }, 300);
+        }
+
+    </script>
+</body>
+</html>

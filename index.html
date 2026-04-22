@@ -68,7 +68,7 @@
                     <a href="#resume" class="btn" data-i18n="about.viewResume">Lihat Resume Saya</a>
                 </div>
                 <div class="about-image">
-                    <img src="foto/saya.jpg" alt="Foto Profil">
+                    <img src="foto/saya.jpeg" alt="Foto Profil">
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date" data-i18n="timeline.job1.time">Januari 2023 - Sekarang</div>
+                        <div class="timeline-date" data-i18n="timeline.job1.time">Januari 2023 - Januari 2026</div>
                         <h3 data-i18n="resume.job1.title">Asisten Perpustakaan</h3>
                         <p data-i18n="resume.job1.company">Universitas Gunadarma</p>
                         <p data-i18n="resume.job1.description">Aktif dalam organisasi menjadi Asisten Perpustakaan yang melayani keluhan mahasiswa, mengoperasi database perpustakaan, dan memvalidasi ribuan penulisan ilmiah dan skripsi mahasiswa.</p>
@@ -95,6 +95,15 @@
                         <h3 data-i18n="resume.job2.title">MSIB Studi Independen Data Analyst</h3>
                         <p data-i18n="resume.job2.company">MyEduSolve</p>
                         <p data-i18n="resume.job2.description">Mengembangkan sales dashboard, order dashboard, dan operation dashboard yang menarik dan fungsional milik client partner Fisiohome untuk menciptakan dashboard yang lebih seamless.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date" data-i18n="timeline.job3.time">Desember 2025 - April 2026</div>
+                        <h3 data-i18n="resume.job3.title">Intern Data Analyst</h3>
+                        <p data-i18n="resume.job3.company">PT. Millenia Dharma Insani</p>
+                        <p data-i18n="resume.job3.description">Melakukan analisis data harga dan penjualan produk kompetitor, membuat dashboard performa penjualan dan operasional untuk perusahaan dan client, dan membuat desain gambar produk untuk diupload pada marketplace.</p>
                     </div>
                 </div>
             </div>
@@ -149,7 +158,7 @@
                     </div>
                     <div class="project-info">
                         <h3 class="project-title" data-i18n="projects.project3.title">Klasifikasi Gambar</h3>
-                        <p class="project-desc" data-i18n="projects.project3.description">Model Machine Learning untuk klasifikasi gambar senjata tradisional yaitu Kujang, Bedog, Bambu Runcing, dan Tombak.</p>
+                        <p class="project-desc" data-i18n="projects.project3.description">Model machine learning untuk klasifikasi gambar senjata tradisional yaitu Kujang, Bedog, Bambu Runcing, dan Tombak.</p>
                         <div class="project-tags">
                             <span class="project-tag">Convolusional Neural Network</span>
                             <span class="project-tag">Python</span>
@@ -157,6 +166,22 @@
                             <span class="project-tag">MobileNetV2</span>
                         </div>
                         <a href="https://github.com/MuhamadSebastian/Image_Classification_Tradisional_Weapon" class="project-link" data-i18n="projects.viewDetails">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="foto/coba.png" alt="Project 4">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title" data-i18n="projects.project4.title">Dashboard Fisiohome</h3>
+                        <p class="project-desc" data-i18n="projects.project4.description">Dashboard monitoring penjualan, operasional, order, dan order batal.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Spreadsheet</span>
+                            <span class="project-tag">Looker</span>
+                        </div>
+                        <a href="#" data-project="project4" class="project-link" data-i18n="projects.viewPresentation">Lihat Presentasi <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -261,6 +286,56 @@
     </footer>
 
     <script>
+        // Animasi detak jantung untuk timeline items
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Tambahkan class animate-heartbeat
+                    entry.target.classList.add('animate-heartbeat');
+                    
+                    // Hentikan observer setelah animasi (hanya sekali)
+                    timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 }); // Trigger ketika 30% item terlihat
+
+        // Observe semua timeline item
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            timelineObserver.observe(item);
+        });
+
+        // Pastikan juga untuk card yang sudah ada di awal
+        document.addEventListener('DOMContentLoaded', function() {
+            // Untuk timeline items yang mungkin sudah visible di awal
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                
+                if (rect.top < windowHeight - 100) {
+                    item.classList.add('animate-heartbeat');
+                }
+            });
+        });
+
+        // Animasi berurutan dengan delay
+        const timelineObserverSequential = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Delay berdasarkan index
+                    setTimeout(() => {
+                        entry.target.classList.add('animate-heartbeat');
+                    }, index * 200);
+                    
+                    timelineObserverSequential.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            timelineObserverSequential.observe(item);
+        });
+
         // Sticky Header
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
@@ -324,7 +399,7 @@
                 "about.p3": "Selain Data Analyst, saya memiliki hobi Futsal. Saya percaya bahwa kehidupan yang seimbang antara kerja dan hobi dapat meningkatkan kreativitas dan produktivitas.",
                 "about.viewResume": "Lihat Resume Saya",
                 "resume.title": "Resume Saya",
-                "timeline.job1.time": "Januari 2023 - Sekarang",
+                "timeline.job1.time": "Januari 2023 - Januari 2026",
                 "resume.job1.title": "Asisten Perpustakaan",
                 "resume.job1.company": "Universitas Gunadarma",
                 "resume.job1.description": "Aktif dalam organisasi menjadi Asisten Perpustakaan yang melayani keluhan mahasiswa, mengoperasi database perpustakaan, dan memvalidasi ribuan penulisan ilmiah dan skripsi mahasiswa.",
@@ -332,16 +407,22 @@
                 "resume.job2.title": "MSIB Studi Independen Data Analyst",
                 "resume.job2.company": "MyEduSolve",
                 "resume.job2.description": "Mengembangkan sales dashboard, order dashboard, dan operation dashboard yang menarik dan fungsional milik client partner Fisiohome untuk menciptakan dashboard yang lebih seamless.",
+                "timeline.job3.time": "Desember 2025 - April 2026",
+                "resume.job3.title": "Intern Data Analyst",
+                "resume.job3.company": "PT. Millenia Dharma Insani",
+                "resume.job3.description": "Melakukan analisis data harga dan penjualan produk kompetitor, membuat dashboard performa penjualan dan operasional untuk perusahaan dan client, dan membuat desain gambar produk untuk diupload pada marketplace.",
                 "resume.education.title": "Bachelor of Informatics Engineering",
                 "resume.education.institution": "Example University",
                 "resume.education.description": "Graduated cum laude. Active in the Informatics Student Association and various national coding competitions.",
                 "projects.title": "Portfolio Saya",
                 "projects.project1.title": "Analisis Dampak Kebiasaan Merokok",
                 "projects.project1.description": "Analisis dampak merokok terhadap faktor kesehatan menggunakan metode CRISP-DM dengan dataset comprehensive.",
-                "projects.project3.title": "Klasifikasi Gambar",
-                "projects.project3.description": "Model Machine Learning untuk klasifikasi gambar senjata tradisional yaitu Kujang, Bedog, Bambu Runcing, dan Tombak.",
                 "projects.project2.title": "Analisis Sentimen Aplikasi PINTU Crypto",
                 "projects.project2.description": "Analisis sentimen pada ulasan aplikasi PINTU Crypto untuk memahami opini dan wawasan pengguna.",
+                "projects.project3.title": "Klasifikasi Gambar",
+                "projects.project3.description": "Model Machine Learning untuk klasifikasi gambar senjata tradisional yaitu Kujang, Bedog, Bambu Runcing, dan Tombak.",
+                "projects.project4.title": "Dashboard Fisiohome",
+                "projects.project4.description": "Dashboard monitoring penjualan, operasional, order, dan order batal.",
                 "projects.viewDetails": "Lihat Detail <i class='fas fa-arrow-right'></i>",
                 "projects.viewPresentation": "Lihat Presentasi <i class='fas fa-arrow-right'></i>",
                 "contact.title": "Mari Terhubung!",
@@ -360,7 +441,7 @@
                 "about.p3": "Besides being a Data Analyst, I enjoy playing futsal. I believe that maintaining a balance between work and hobbies can enhance creativity and productivity.",
                 "about.viewResume": "View My Resume",
                 "resume.title": "My Resume",
-                "timeline.job1.time": "January 2023 - Now",
+                "timeline.job1.time": "January 2023 - January 2026",
                 "resume.job1.title": "Library Assistant",
                 "resume.job1.company": "Gunadarma University",
                 "resume.job1.description": "Actively involved in an organization as a Library Assistant, handling student inquiries, operating the library database, and validating thousands of academic papers and student theses.",
@@ -368,16 +449,22 @@
                 "resume.job2.title": "MSIB Studi Independen Data Analyst",
                 "resume.job2.company": "MyEduSolve",
                 "resume.job2.description": "Developed engaging and functional sales, order, and operation dashboards for the client partner Fisiohome to create a more seamless dashboard experience.",
+                "timeline.job3.time": "December 2025 - April 2026",
+                "resume.job3.title": "Intern Data Analyst",
+                "resume.job3.company": "PT. Millenia Dharma Insani",
+                "resume.job3.description": "Conducted data analysis on competitors product pricing and sales, developed sales and operational performance dashboards for both the company and clients, and designed product images for upload to marketplaces.",
                 "resume.education.title": "Bachelor of Informatics Engineering",
                 "resume.education.institution": "Example University",
                 "resume.education.description": "Graduated cum laude. Active in the Informatics Student Association and various national coding competitions.",
                 "projects.title": "My Portfolio",
                 "projects.project1.title": "Analysis of the Impact of Smoking Habits",
                 "projects.project1.description": "Analysis of the impact of smoking on health factors using the CRISP-DM method with a comprehensive dataset.",
-                "projects.project3.title": "Image Classification",
-                "projects.project3.description": "Machine Learning model for image classification of traditional weapons, namely Kujang, Bedog, Bambu Runcing, and Tombak.",
                 "projects.project2.title": "Sentiment Analysis of the PINTU Crypto App",
                 "projects.project2.description": "Sentiment analysis on PINTU Crypto application reviews to understand user opinions and insights.",
+                "projects.project3.title": "Image Classification",
+                "projects.project3.description": "Machine Learning model for image classification of traditional weapons, namely Kujang, Bedog, Bambu Runcing, and Tombak.",
+                "projects.project4.title": "Dashboard Fisiohome",
+                "projects.project4.description": "Dashboard for monitoring sales performance, operational activity, orders, and order cancellations.",
                 "projects.viewDetails": "View Details <i class='fas fa-arrow-right'></i>",
                 "projects.viewPresentation": "View Presentation <i class='fas fa-arrow-right'></i>",
                 "contact.title": "Let's Connect!",
@@ -436,6 +523,10 @@
             project2: {
                 pdf: "pdf/Pintu.pdf", 
                 title: "Analisis Sentimen Aplikasi PINTU",
+            },
+            project4: {
+                pdf: "pdf/Fisiohome_Dashboard.pdf", 
+                title: "Dashboard Fisiohome",
             }
         };
 

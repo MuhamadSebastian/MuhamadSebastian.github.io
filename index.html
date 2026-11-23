@@ -63,7 +63,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <p data-i18n="about.p1">Halo! Saya seorang Data Analyst dengan pengalaman kurang dari 1 tahun dalam mengembangkan dashboard. Saya memiliki keahlian dalam Python, SQL, dan berbagai tools visualisasi data seperti Looker Studio dan Spreadsheet atau Excel.</p>
-                    <p data-i18n="about.p2">Saya lulusan Sarjana Informatika dari Universitas Gunadarma, saya aktif dalam organisasi untuk mengasah kemampuan pemecahan masalah dan kerja tim saya.</p>
+                    <p data-i18n="about.p2">Saya lulusan Sarjana Informatika dari Universitas Gunadarma, selama kuliah saya aktif menjadi bagian dari Perpustakaan Universitas Gunadarma selama 3 tahun untuk mengasah kemampuan pemecahan masalah dan kerja tim saya.</p>
                     <p data-i18n="about.p3">Selain Data Analyst, saya memiliki hobi Futsal. Saya percaya bahwa kehidupan yang seimbang antara kerja dan hobi dapat meningkatkan kreativitas dan produktivitas.</p>
                     <a href="#resume" class="btn" data-i18n="about.viewResume">Lihat Resume Saya</a>
                 </div>
@@ -100,10 +100,19 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date" data-i18n="timeline.job3.time">Desember 2025 - Juli 2026</div>
+                        <div class="timeline-date" data-i18n="timeline.job3.time">Desember 2025 - Agustus 2026</div>
                         <h3 data-i18n="resume.job3.title">Intern Data Analyst</h3>
-                        <p data-i18n="resume.job3.company">PT. Millenia Dharma Insani</p>
+                        <p data-i18n="resume.job3.company">PT. Millenia Dharma Insani (Kalbe Group)</p>
                         <p data-i18n="resume.job3.description">Melakukan analisis data harga dan penjualan produk kompetitor, membuat dashboard performa penjualan dan operasional untuk perusahaan dan client, dan membuat desain gambar produk untuk diupload pada marketplace.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date" data-i18n="timeline.job4.time">Agustus 2026 - Sekarang</div>
+                        <h3 data-i18n="resume.job4.title">Regional Data Analyst Intern</h3>
+                        <p data-i18n="resume.job4.company">PT. Sinarniaga Sejahtera (Garudafood Group)</p>
+                        <p data-i18n="resume.job4.description">Analisis dan membuat dashboard.</p>
                     </div>
                 </div>
             </div>
@@ -185,22 +194,57 @@
                     </div>
                 </div>
 
-                <!-- Modal PPT Viewer - SIMPLIFIED -->
+
+                <!-- Modal PDF.js Viewer -->
                 <div id="project-modal" class="modal">
                     <div class="modal-content">
+
                         <span class="close">&times;</span>
-                        
-                        <!-- HANYA JUDUL -->
+
                         <div class="modal-header">
                             <h3 id="modal-title">Project Presentations</h3>
                         </div>
-                        
-                        <!-- HANYA PDF VIEWER -->
+
                         <div class="modal-body">
-                            <iframe id="project-viewer" width="100%" height="105%" frameborder="0"></iframe>
+
+                            <div class="pdf-toolbar">
+
+                                <div class="pdf-navigation">
+                                    <button id="prev-page" type="button" disabled>
+                                        <i class="fas fa-chevron-left"></i>
+                                    </button>
+
+                                    <span>
+                                        Halaman
+                                        <span id="page-num">1</span>
+                                        /
+                                        <span id="page-count">-</span>
+                                    </span>
+
+                                    <button id="next-page" type="button" disabled>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </button>
+                                </div>
+
+                                <div class="pdf-zoom">
+                                    <button id="zoom-out" type="button">−</button>
+                                    <span id="zoom-level">100%</span>
+                                    <button id="zoom-in" type="button">+</button>
+                                </div>
+
+                            </div>
+
+                            <div id="pdf-viewer">
+                                <div id="pdf-message">
+                                    Pilih project untuk membuka dokumen.
+                                </div>
+                                <canvas id="pdf-render" hidden></canvas>
+                            </div>
+
                         </div>
                     </div>
                 </div>
+
                 
                 <!-- <div class="project-card">
                     <div class="project-image">
@@ -285,6 +329,7 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script>
         // Animasi detak jantung untuk timeline items
         const timelineObserver = new IntersectionObserver((entries) => {
@@ -407,10 +452,14 @@
                 "resume.job2.title": "MSIB Studi Independen Data Analyst",
                 "resume.job2.company": "MyEduSolve",
                 "resume.job2.description": "Mengembangkan sales dashboard, order dashboard, dan operation dashboard yang menarik dan fungsional milik client partner Fisiohome untuk menciptakan dashboard yang lebih seamless.",
-                "timeline.job3.time": "Desember 2025 - Juli 2026",
+                "timeline.job3.time": "Desember 2025 - Agustus 2026",
                 "resume.job3.title": "Intern Data Analyst",
-                "resume.job3.company": "PT. Millenia Dharma Insani",
+                "resume.job3.company": "PT. Millenia Dharma Insani (Kalbe Group)",
                 "resume.job3.description": "Melakukan analisis data harga dan penjualan produk kompetitor, membuat dashboard performa penjualan dan operasional untuk perusahaan dan client, dan membuat desain gambar produk untuk diupload pada marketplace.",
+                "timeline.job4.time": "Agustus 2026 - Sekarang",
+                "resume.job4.title": "Regional Data Analyst Intern",
+                "resume.job4.company": "PT. Sinarniaga Sejahtera (Garudafood Group)",
+                "resume.job4.description": "Melakukan analisis data secara menyeluruh terkait performa penjualan, insentif salesman, operasional depo, dan program marketing. Mengembangkan dashboard interaktif untuk memantau performa penjualan dan operasional, mengonsolidasikan data dari berbagai principal, serta melakukan pengambilan data berskala besar untuk mendukung insight bisnis dan pengambilan keputusan berbasis data.",
                 "resume.education.title": "Bachelor of Informatics Engineering",
                 "resume.education.institution": "Example University",
                 "resume.education.description": "Graduated cum laude. Active in the Informatics Student Association and various national coding competitions.",
@@ -449,10 +498,14 @@
                 "resume.job2.title": "MSIB Studi Independen Data Analyst",
                 "resume.job2.company": "MyEduSolve",
                 "resume.job2.description": "Developed engaging and functional sales, order, and operation dashboards for the client partner Fisiohome to create a more seamless dashboard experience.",
-                "timeline.job3.time": "December 2025 - July 2026",
+                "timeline.job3.time": "December 2025 - August 2026",
                 "resume.job3.title": "Intern Data Analyst",
-                "resume.job3.company": "PT. Millenia Dharma Insani",
+                "resume.job3.company": "PT. Millenia Dharma Insani (Kalbe Group)",
                 "resume.job3.description": "Conducted data analysis on competitors product pricing and sales, developed sales and operational performance dashboards for both the company and clients, and designed product images for upload to marketplaces.",
+                "timeline.job4.time": "August 2026 - Now",
+                "resume.job4.title": "Regional Data Analyst Intern",
+                "resume.job4.company": "PT. Sinarniaga Sejahtera (Garudafood Group)",
+                "resume.job4.description": "Conducted comprehensive data analysis on sales performance, salesman incentives, depot operations, and marketing programs. Developed interactive dashboards to monitor sales and operational performance, consolidated data from multiple principals, and performed large-scale data extraction to support business insights and data-driven decision-making",
                 "resume.education.title": "Bachelor of Informatics Engineering",
                 "resume.education.institution": "Example University",
                 "resume.education.description": "Graduated cum laude. Active in the Informatics Student Association and various national coding competitions.",
@@ -514,80 +567,416 @@
             }
         });
 
-        // Data project presentations
+                
+        // ========================================
+        // PDF.JS CONFIGURATION
+        // ========================================
+
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+            "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+        let pdfDoc = null;
+        let pdfLoadingTask = null;
+        let renderTask = null;
+
+        let currentPage = 1;
+        let currentScale = 1;
+
+        const canvas = document.getElementById("pdf-render");
+        const ctx = canvas.getContext("2d");
+
+        const pdfViewer = document.getElementById("pdf-viewer");
+
+        let fitScale = 1;
+        let userZoom = 1;
+
+        const pageNum = document.getElementById("page-num");
+        const pageCount = document.getElementById("page-count");
+        const zoomLevel = document.getElementById("zoom-level");
+
+        const pdfMessage = document.getElementById("pdf-message");
+        const prevBtn = document.getElementById("prev-page");
+        const nextBtn = document.getElementById("next-page");
+
+
+        // ========================================
+        // PROJECT DATA
+        // ========================================
+
         const projectsData = {
+
             project1: {
                 pdf: "pdf/Mini_Project_Crisp_DM_Group_4.pdf",
-                title: "Analisis Data Dampak Kebiasaan Merokok terhadap Faktor Kesehatan dengan Metode CRISP-DM",
+                title: "Analisis Data Dampak Kebiasaan Merokok terhadap Faktor Kesehatan dengan Metode CRISP-DM"
             },
+
             project2: {
-                pdf: "pdf/Pintu.pdf", 
-                title: "Analisis Sentimen Aplikasi PINTU",
+                pdf: "pdf/Pintu.pdf",
+                title: "Analisis Sentimen Aplikasi PINTU"
             },
+
             project4: {
-                pdf: "pdf/Fisiohome_Dashboard.pdf", 
-                title: "Dashboard Fisiohome",
+                pdf: "pdf/Fisiohome_Dashboard.pdf",
+                title: "Dashboard Fisiohome"
             }
+
         };
 
-        // Update project cards dengan data attribute
-        document.querySelectorAll('.project-card').forEach((card, index) => {
-            const projectId = `project${index + 1}`;
-            const viewDetailsLink = card.querySelector('.project-link');
-            viewDetailsLink.setAttribute('data-project', projectId);
-        });
 
-        // Event listener untuk View Details
-        document.querySelectorAll('.project-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                // Jika ini link internal (data-project) dan bukan external link
-                if (this.hasAttribute('data-project') && this.getAttribute('href') === '#') {
-                    e.preventDefault();
-                    const projectId = this.getAttribute('data-project');
-                    openProjectModal(projectId);
+        // ========================================
+        // RENDER PDF PAGE - FIT PAGE
+        // ========================================
+
+        async function renderPDFPage(number) {
+
+            if (!pdfDoc) return;
+
+            if (renderTask) {
+                renderTask.cancel();
+                renderTask = null;
+            }
+
+            try {
+
+                const page = await pdfDoc.getPage(number);
+
+                // Ukuran asli halaman PDF
+                const originalViewport = page.getViewport({
+                    scale: 1
+                });
+
+                // Ukuran area viewer
+                const viewerRect = pdfViewer.getBoundingClientRect();
+
+                const viewerWidth = viewerRect.width - 40;
+                const viewerHeight = viewerRect.height - 40;
+
+                if (viewerWidth <= 0 || viewerHeight <= 0) {
+                    console.error("Ukuran PDF viewer tidak valid:", viewerRect);
+                    return;
                 }
-                // Untuk external link (GitHub) - biarkan default behavior
-            });
-        });
+
+                // Hitung skala agar seluruh halaman terlihat
+                fitScale = Math.min(
+                    viewerWidth / originalViewport.width,
+                    viewerHeight / originalViewport.height
+                );
+
+                // Skala akhir dengan tambahan zoom pengguna
+                currentScale = fitScale * userZoom;
+
+                const viewport = page.getViewport({
+                    scale: currentScale
+                });
+
+                const outputScale = window.devicePixelRatio || 1;
+
+                canvas.width = Math.floor(viewport.width * outputScale);
+                canvas.height = Math.floor(viewport.height * outputScale);
+
+                canvas.style.width = viewport.width + "px";
+                canvas.style.height = viewport.height + "px";
+
+                const transform = outputScale !== 1
+                    ? [outputScale, 0, 0, outputScale, 0, 0]
+                    : null;
+
+                renderTask = page.render({
+                    canvasContext: ctx,
+                    viewport: viewport,
+                    transform: transform
+                });
+
+                await renderTask.promise;
+
+                pageNum.textContent = number;
+                pageCount.textContent = pdfDoc.numPages;
+
+                // Tampilkan persentase terhadap ukuran Fit Page
+                zoomLevel.textContent =
+                    Math.round(userZoom * 100) + "%";
+
+                prevBtn.disabled = number <= 1;
+                nextBtn.disabled = number >= pdfDoc.numPages;
+
+            } catch (error) {
+
+                if (error.name !== "RenderingCancelledException") {
+                    console.error("PDF Render Error:", error);
+                }
+
+            } finally {
+
+                renderTask = null;
+
+            }
+
+        }
+
+
+        // ========================================
+        // LOAD PDF
+        // ========================================
+
+        async function loadPDF(url) {
+
+            pdfMessage.hidden = false;
+            pdfMessage.textContent = "Memuat dokumen...";
+
+            canvas.hidden = true;
+
+            prevBtn.disabled = true;
+            nextBtn.disabled = true;
+
+            try {
+
+                if (renderTask) {
+                    renderTask.cancel();
+                    renderTask = null;
+                }
+
+                if (pdfLoadingTask) {
+                    await pdfLoadingTask.destroy();
+                    pdfLoadingTask = null;
+                }
+
+                pdfDoc = null;
+
+                currentPage = 1;
+                currentScale = 1;
+                userZoom = 1;
+                fitScale = 1;
+
+                canvas.width = 0;
+                canvas.height = 0;
+
+                pageNum.textContent = "1";
+                pageCount.textContent = "-";
+                zoomLevel.textContent = "100%";
+
+                pdfLoadingTask = pdfjsLib.getDocument({
+                    url: url
+                });
+
+                const loadedDocument = await pdfLoadingTask.promise;
+
+                pdfDoc = loadedDocument;
+
+                pdfMessage.hidden = true;
+                canvas.hidden = false;
+
+                await renderPDFPage(currentPage);
+
+            } catch (error) {
+
+                console.error("Gagal membuka PDF:", error);
+
+                pdfMessage.hidden = false;
+                pdfMessage.textContent =
+                    "PDF gagal dibuka. Periksa lokasi file atau koneksi server.";
+
+                canvas.hidden = true;
+
+            }
+
+        }
+
+
+        // ========================================
+        // OPEN PROJECT MODAL
+        // ========================================
 
         function openProjectModal(projectId) {
+
             const project = projectsData[projectId];
-            
-            if (project) {
-                document.getElementById('modal-title').textContent = project.title;
-                document.getElementById('project-viewer').src = project.pdf;
-                document.getElementById('project-modal').style.display = 'block';
-                document.body.style.overflow = 'hidden';
+
+            if (!project) {
+                console.error("Project tidak ditemukan:", projectId);
+                return;
             }
+
+            const modal = document.getElementById("project-modal");
+
+            document.getElementById("modal-title").textContent =
+                project.title;
+
+            modal.style.display = "block";
+
+            document.body.style.overflow = "hidden";
+
+            loadPDF(project.pdf);
+
         }
 
-        // Close modal functionality
-        document.querySelector('.close').addEventListener('click', closeModal);
 
-        // Close modal ketika klik outside content
-        window.addEventListener('click', function(e) {
-            const modal = document.getElementById('project-modal');
+        // ========================================
+        // PDF NAVIGATION
+        // ========================================
+
+        prevBtn.addEventListener("click", function() {
+
+            if (currentPage > 1) {
+
+                currentPage--;
+
+                renderPDFPage(currentPage);
+
+            }
+
+        });
+
+
+        nextBtn.addEventListener("click", function() {
+
+            if (pdfDoc && currentPage < pdfDoc.numPages) {
+
+                currentPage++;
+
+                renderPDFPage(currentPage);
+
+            }
+
+        });
+
+
+        // ========================================
+        // PDF ZOOM
+        // ========================================
+
+        document.getElementById("zoom-in").addEventListener("click", function() {
+
+            if (userZoom < 3) {
+
+                userZoom = Math.min(3, userZoom + 0.2);
+
+                renderPDFPage(currentPage);
+
+            }
+
+        });
+
+
+        document.getElementById("zoom-out").addEventListener("click", function() {
+
+            if (userZoom > 0.4) {
+
+                userZoom = Math.max(0.4, userZoom - 0.2);
+
+                renderPDFPage(currentPage);
+
+            }
+
+        });
+
+
+        // ========================================
+        // PROJECT LINK EVENT
+        // ========================================
+
+        document.querySelectorAll(".project-link").forEach(link => {
+
+            link.addEventListener("click", function(e) {
+
+                if (
+                    this.hasAttribute("data-project") &&
+                    this.getAttribute("href") === "#"
+                ) {
+
+                    e.preventDefault();
+
+                    const projectId = this.getAttribute("data-project");
+
+                    openProjectModal(projectId);
+
+                }
+
+            });
+
+        });
+
+
+        // ========================================
+        // CLOSE MODAL
+        // ========================================
+
+        document.querySelector(".close").addEventListener("click", closeModal);
+
+
+        window.addEventListener("click", function(e) {
+
+            const modal = document.getElementById("project-modal");
+
             if (e.target === modal) {
+
                 closeModal();
+
             }
+
         });
 
-        // Close modal dengan ESC key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
+
+        document.addEventListener("keydown", function(e) {
+
+            if (e.key === "Escape") {
+
                 closeModal();
+
             }
+
         });
+
 
         function closeModal() {
-            document.getElementById('project-modal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-            
-            // Reset iframe source untuk hemat memory
-            setTimeout(() => {
-                document.getElementById('project-viewer').src = '';
-            }, 300);
+
+            const modal = document.getElementById("project-modal");
+
+            modal.style.display = "none";
+
+            document.body.style.overflow = "auto";
+
+            if (renderTask) {
+                renderTask.cancel();
+                renderTask = null;
+            }
+
+            if (pdfLoadingTask) {
+                pdfLoadingTask.destroy();
+                pdfLoadingTask = null;
+            }
+
+            pdfDoc = null;
+
+            canvas.width = 0;
+            canvas.height = 0;
+
+            canvas.hidden = true;
+
+            pdfMessage.hidden = false;
+            pdfMessage.textContent = "Pilih project untuk membuka dokumen.";
+
+            currentPage = 1;
+            currentScale = 1;
+
+            pageNum.textContent = "1";
+            pageCount.textContent = "-";
+            zoomLevel.textContent = "100%";
+
+            prevBtn.disabled = true;
+            nextBtn.disabled = true;
+
         }
+
+        window.addEventListener("resize", function() {
+
+            if (pdfDoc && document.getElementById("project-modal").style.display === "block") {
+
+                userZoom = 1;
+                renderPDFPage(currentPage);
+
+            }
+
+        });
+
 
     </script>
 </body>
